@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIColor_Hex_Swift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,6 +16,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var usernameGlyph: UIButton!
     @IBOutlet var usernameDivider: UIView!
+    
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var passwordGlyph: UIButton!
+    @IBOutlet var passwordDivider: UIView!
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -29,6 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         signInButton.layer.masksToBounds = true
         
         usernameTextField.delegate = self
+        passwordTextField.delegate = self
         
     }
 
@@ -37,13 +43,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        if (textField == usernameTextField) {
+            usernameGlyph.tintColor = UIColor.whiteColor()
+            usernameDivider.backgroundColor = UIColor.whiteColor()
+        } else if (textField == passwordTextField) {
+            passwordGlyph.tintColor = UIColor.whiteColor()
+            passwordDivider.backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         if (textField == usernameTextField) {
-            usernameGlyph.tintColor = UIColor.yellowColor()
-            usernameDivider.backgroundColor = UIColor.yellowColor()
+            usernameGlyph.tintColor = UIColor(rgba: "#f9c00e")
+            usernameDivider.backgroundColor = UIColor(rgba: "#f9c00e")
+        } else if (textField == passwordTextField) {
+            passwordGlyph.tintColor = UIColor(rgba: "#f9c00e")
+            passwordDivider.backgroundColor = UIColor(rgba: "#f9c00e")
         }
     }
 
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
     /*
     // MARK: - Navigation
 

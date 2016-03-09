@@ -192,6 +192,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="passwordDivider" destination="Tf9-LZ-8VP" id="pC7-Hi-pdH"/>
+                        <outlet property="passwordGlyph" destination="1WO-wg-Jvu" id="Ate-KZ-zt0"/>
+                        <outlet property="passwordTextField" destination="puQ-Bm-QJW" id="GTY-9S-710"/>
                         <outlet property="signInButton" destination="G5K-f0-2R8" id="HRM-Vn-Ktc"/>
                         <outlet property="usernameDivider" destination="CSA-v6-yRd" id="yLc-WA-GDq"/>
                         <outlet property="usernameGlyph" destination="48b-ne-SDl" id="o20-sy-bvw"/>

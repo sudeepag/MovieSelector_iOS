@@ -6,6 +6,7 @@ use_frameworks!
 target 'MovieSelector_iOS' do
 pod 'Alamofire', '~> 3.0'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'UIColor_Hex_Swift', '~> 1.8'
 end
 
 target 'MovieSelector_iOSTests' do

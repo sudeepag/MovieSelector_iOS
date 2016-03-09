@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MovieSelector_iOS/Alamofire.framework"
   install_framework "Pods-MovieSelector_iOS/SwiftyJSON.framework"
+  install_framework "Pods-MovieSelector_iOS/UIColor_Hex_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MovieSelector_iOS/Alamofire.framework"
   install_framework "Pods-MovieSelector_iOS/SwiftyJSON.framework"
+  install_framework "Pods-MovieSelector_iOS/UIColor_Hex_Swift.framework"
 fi
