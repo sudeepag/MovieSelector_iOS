@@ -8,12 +8,28 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var signInButton: UIButton!
+    
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var usernameGlyph: UIButton!
+    @IBOutlet var usernameDivider: UIView!
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        signInButton.layer.cornerRadius = 25.0
+        signInButton.layer.masksToBounds = true
+        
+        usernameTextField.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +37,12 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if (textField == usernameTextField) {
+            usernameGlyph.tintColor = UIColor.yellowColor()
+            usernameDivider.backgroundColor = UIColor.yellowColor()
+        }
+    }
 
     /*
     // MARK: - Navigation
