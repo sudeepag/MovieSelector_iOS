@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49E4FE73E0A5D5EC0B41FA74 /* Pods_MovieSelector_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDCE970CC8575223D510723 /* Pods_MovieSelector_iOS.framework */; };
+		C011D1C31C9346A900FF43B4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C011D1C21C9346A900FF43B4 /* MovieTableViewCell.swift */; };
 		C01B54471C909E3400123B3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B54461C909E3400123B3D /* Constants.swift */; };
 		C05825BD1C8F884200A10823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825BC1C8F884200A10823 /* AppDelegate.swift */; };
 		C05825BF1C8F884200A10823 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825BE1C8F884200A10823 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		2471208EE00EE88B19FD1B8B /* Pods-MovieSelector_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSelector_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieSelector_iOS/Pods-MovieSelector_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		67BA7C9D10F5DABEC306F02F /* Pods-MovieSelector_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieSelector_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieSelector_iOS/Pods-MovieSelector_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		6EDCE970CC8575223D510723 /* Pods_MovieSelector_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieSelector_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C011D1C21C9346A900FF43B4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		C01B54461C909E3400123B3D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C05825B91C8F884200A10823 /* MovieSelector_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSelector_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05825BC1C8F884200A10823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,9 +144,9 @@
 				C05825F81C8F8B9500A10823 /* View Controllers */,
 				C05825F71C8F8B8A00A10823 /* Managers */,
 				C05825F61C8F8B7A00A10823 /* Objects */,
-				C05825BE1C8F884200A10823 /* ViewController.swift */,
-				C05825C01C8F884200A10823 /* Main.storyboard */,
 				C05825F41C8F8B6900A10823 /* Login.storyboard */,
+				C05825C01C8F884200A10823 /* Main.storyboard */,
+				C011D1C21C9346A900FF43B4 /* MovieTableViewCell.swift */,
 				C05825C31C8F884200A10823 /* Assets.xcassets */,
 				C05825C51C8F884300A10823 /* LaunchScreen.storyboard */,
 				C05825C81C8F884300A10823 /* Info.plist */,
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				C05825F91C8F8BA200A10823 /* LoginViewController.swift */,
+				C05825BE1C8F884200A10823 /* ViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C011D1C31C9346A900FF43B4 /* MovieTableViewCell.swift in Sources */,
 				C05825F11C8F8AD900A10823 /* UserManager.swift in Sources */,
 				C05825ED1C8F8AC500A10823 /* MovieManager.swift in Sources */,
 				C05825BF1C8F884200A10823 /* ViewController.swift in Sources */,

@@ -63,6 +63,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func signInButtonSelected(sender: AnyObject) {
+        NetworkManager.sharedManager.authUser(usernameTextField.text!, password: passwordTextField.text!) { (success) -> Void in
+            if (success) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainVC = storyboard.instantiateInitialViewController()
+                self.navigationController?.pushViewController(mainVC!, animated: true)
+            } else {
+                let alert = UIAlertView(title: "Error", message: "Unable to log in. Please ensure that your email and password are correct.", delegate: self, cancelButtonTitle: "Okay")
+                alert.show()
+            }
+        }
+    }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()

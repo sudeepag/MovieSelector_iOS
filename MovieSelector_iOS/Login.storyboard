@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D7D-xa-DYP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GEg-9p-aGQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7,6 +7,22 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NGH-5g-szN">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="GEg-9p-aGQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IMd-TJ-TsX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="D7D-xa-DYP" kind="relationship" relationship="rootViewController" id="PiW-uw-Vtx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LY-SM-eGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-477" y="338"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="bm2-8F-M9G">
             <objects>
@@ -19,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muveeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="84p-SP-fNy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="muveeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="84p-SP-fNy">
                                 <rect key="frame" x="135" y="95" width="330" height="153.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="84p-SP-fNy" secondAttribute="height" multiplier="552:256" id="vSn-iR-kMr"/>
@@ -158,10 +174,13 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButtonSelected:" destination="D7D-xa-DYP" eventType="touchUpInside" id="5oI-qL-Yx8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZY1-bc-qEJ">
                                 <rect key="frame" x="201" y="461" width="199" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Create an account">
                                     <color key="titleColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -191,6 +210,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="hA2-cY-SKw"/>
                     <connections>
                         <outlet property="passwordDivider" destination="Tf9-LZ-8VP" id="pC7-Hi-pdH"/>
                         <outlet property="passwordGlyph" destination="1WO-wg-Jvu" id="Ate-KZ-zt0"/>
