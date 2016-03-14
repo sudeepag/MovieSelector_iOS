@@ -8,6 +8,9 @@ pod 'Alamofire', '~> 3.0'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'UIColor_Hex_Swift', '~> 1.8'
 pod 'Firebase', '>= 2.5.0'
+pod 'Kingfisher', '~> 2.1'
+pod 'AlamofireImage', '~> 2.0'
+pod 'SwiftLoader'
 end
 
 target 'MovieSelector_iOSTests' do

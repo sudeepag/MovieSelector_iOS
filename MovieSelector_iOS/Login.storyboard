@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="muveeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="84p-SP-fNy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muveeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="84p-SP-fNy">
                                 <rect key="frame" x="135" y="95" width="330" height="153.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="84p-SP-fNy" secondAttribute="height" multiplier="552:256" id="vSn-iR-kMr"/>

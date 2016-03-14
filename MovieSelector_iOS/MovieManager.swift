@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MovieManager {
     
@@ -14,9 +15,11 @@ class MovieManager {
     
     var movieList = [Movie]()
     
-    func addMovie(title: String) {
+    func addMovie(title: String, description: String, image: UIImage) {
         let movie = Movie()
         movie.title = title
+        movie.description = description
+        movie.image = image
         movieList.append(movie)
     }
     

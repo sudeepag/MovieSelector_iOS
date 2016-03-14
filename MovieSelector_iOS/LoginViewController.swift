@@ -8,6 +8,7 @@
 
 import UIKit
 import UIColor_Hex_Swift
+import SwiftLoader
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -64,8 +65,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signInButtonSelected(sender: AnyObject) {
+        SwiftLoader.show(animated: true)
         NetworkManager.sharedManager.authUser(usernameTextField.text!, password: passwordTextField.text!) { (success) -> Void in
             if (success) {
+                SwiftLoader.hide()
+                print(MovieManager.sharedManager.movieList)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let mainVC = storyboard.instantiateInitialViewController()
                 self.navigationController?.pushViewController(mainVC!, animated: true)

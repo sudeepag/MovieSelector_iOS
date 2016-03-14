@@ -21,7 +21,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
-        NetworkManager.sharedManager.fetchMovies()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +40,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = self.tableView.dequeueReusableCellWithIdentifier("movieCell") as! MovieTableViewCell
         let movie = MovieManager.sharedManager.movieList[indexPath.row]
         cell.movieTitle.text = movie.title
+        cell.movieDescription.text = movie.description
+        cell.imageView?.image = movie.image
+        cell.imageView!.contentMode = .Center
         return cell
     }
 

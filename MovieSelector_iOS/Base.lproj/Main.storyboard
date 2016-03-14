@@ -52,7 +52,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Really Really Long Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzc-VH-Aln">
-                                                    <rect key="frame" x="127" y="15" width="451" height="29.5"/>
+                                                    <rect key="frame" x="120" y="15" width="458" height="29.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29.5" id="dxD-rw-228"/>
                                                     </constraints>
@@ -61,14 +61,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-9F-KCs">
-                                                    <rect key="frame" x="127" y="49.5" width="451" height="85"/>
+                                                    <rect key="frame" x="120" y="49.5" width="458" height="85"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posternotfound" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-0p-sz1">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-0p-sz1">
                                                     <rect key="frame" x="15" y="15" width="97" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="lcA-0p-sz1" secondAttribute="height" multiplier="97:120" id="Gga-QG-jqY"/>
                                                     </constraints>
@@ -82,10 +83,10 @@
                                                 <constraint firstItem="7Ss-9F-KCs" firstAttribute="bottom" secondItem="lcA-0p-sz1" secondAttribute="bottom" id="JJE-C3-maS"/>
                                                 <constraint firstItem="7Ss-9F-KCs" firstAttribute="bottom" secondItem="lcA-0p-sz1" secondAttribute="bottom" id="KAM-0i-D0i"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zzc-VH-Aln" secondAttribute="trailing" constant="22" id="Ldp-wr-OZr"/>
-                                                <constraint firstItem="Zzc-VH-Aln" firstAttribute="leading" secondItem="lcA-0p-sz1" secondAttribute="trailing" constant="15" id="PhZ-uj-48J"/>
+                                                <constraint firstItem="Zzc-VH-Aln" firstAttribute="leading" secondItem="lcA-0p-sz1" secondAttribute="trailing" constant="8" id="PhZ-uj-48J"/>
                                                 <constraint firstItem="lcA-0p-sz1" firstAttribute="height" secondItem="Fv0-oi-it6" secondAttribute="height" multiplier="0.8" id="RPW-9v-JjX"/>
                                                 <constraint firstItem="lcA-0p-sz1" firstAttribute="centerY" secondItem="Fv0-oi-it6" secondAttribute="centerY" id="SIy-Qm-YvP"/>
-                                                <constraint firstItem="7Ss-9F-KCs" firstAttribute="leading" secondItem="lcA-0p-sz1" secondAttribute="trailing" constant="15" id="SOT-IB-SM4"/>
+                                                <constraint firstItem="7Ss-9F-KCs" firstAttribute="leading" secondItem="lcA-0p-sz1" secondAttribute="trailing" constant="8" id="SOT-IB-SM4"/>
                                                 <constraint firstItem="7Ss-9F-KCs" firstAttribute="top" secondItem="Zzc-VH-Aln" secondAttribute="bottom" constant="8" id="Xau-s8-MaM"/>
                                                 <constraint firstItem="7Ss-9F-KCs" firstAttribute="top" secondItem="Zzc-VH-Aln" secondAttribute="bottom" constant="5" id="Yut-L7-uoz"/>
                                                 <constraint firstAttribute="bottom" secondItem="7Ss-9F-KCs" secondAttribute="bottom" constant="14.5" id="c4f-Th-WFS"/>
@@ -135,6 +136,5 @@
     </scenes>
     <resources>
         <image name="menuButton" width="48" height="48"/>
-        <image name="posternotfound" width="170" height="270"/>
     </resources>
 </document>

@@ -18,9 +18,6 @@ class Movie {
     var description: String!
     var firstActor: String!
     var secondActor: String!
-    var thumbnail: UIImage!
-    
-    
-    
+    var image: UIImage!
     
 }
