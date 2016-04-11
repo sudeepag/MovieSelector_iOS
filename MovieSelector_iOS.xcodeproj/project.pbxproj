@@ -10,6 +10,7 @@
 		49E4FE73E0A5D5EC0B41FA74 /* Pods_MovieSelector_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDCE970CC8575223D510723 /* Pods_MovieSelector_iOS.framework */; };
 		C011D1C31C9346A900FF43B4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C011D1C21C9346A900FF43B4 /* MovieTableViewCell.swift */; };
 		C01B54471C909E3400123B3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B54461C909E3400123B3D /* Constants.swift */; };
+		C042D9D11C9731AC00384F32 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C042D9D01C9731AC00384F32 /* MovieDetailViewController.swift */; };
 		C05825BD1C8F884200A10823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825BC1C8F884200A10823 /* AppDelegate.swift */; };
 		C05825BF1C8F884200A10823 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825BE1C8F884200A10823 /* ViewController.swift */; };
 		C05825C21C8F884200A10823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05825C01C8F884200A10823 /* Main.storyboard */; };
@@ -24,6 +25,10 @@
 		C05825F31C8F8AEE00A10823 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825F21C8F8AEE00A10823 /* NetworkManager.swift */; };
 		C05825F51C8F8B6900A10823 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05825F41C8F8B6900A10823 /* Login.storyboard */; };
 		C05825FA1C8F8BA200A10823 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05825F91C8F8BA200A10823 /* LoginViewController.swift */; };
+		C05867001CA9A10200D0E562 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05866FF1CA9A10200D0E562 /* SettingsViewController.swift */; };
+		C05B205C1CBC1587008E81A7 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B205B1CBC1587008E81A7 /* CreateAccountViewController.swift */; };
+		C09607A31CB81F88004C2DD4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09607A21CB81F88004C2DD4 /* NavigationController.swift */; };
+		C09607A71CB82183004C2DD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09607A61CB82183004C2DD4 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,7 @@
 		6EDCE970CC8575223D510723 /* Pods_MovieSelector_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieSelector_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C011D1C21C9346A900FF43B4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		C01B54461C909E3400123B3D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C042D9D01C9731AC00384F32 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		C05825B91C8F884200A10823 /* MovieSelector_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieSelector_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05825BC1C8F884200A10823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C05825BE1C8F884200A10823 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,10 @@
 		C05825F21C8F8AEE00A10823 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C05825F41C8F8B6900A10823 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C05825F91C8F8BA200A10823 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C05866FF1CA9A10200D0E562 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C05B205B1CBC1587008E81A7 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		C09607A21CB81F88004C2DD4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		C09607A61CB82183004C2DD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +205,12 @@
 			isa = PBXGroup;
 			children = (
 				C05825F91C8F8BA200A10823 /* LoginViewController.swift */,
+				C05B205B1CBC1587008E81A7 /* CreateAccountViewController.swift */,
 				C05825BE1C8F884200A10823 /* ViewController.swift */,
+				C042D9D01C9731AC00384F32 /* MovieDetailViewController.swift */,
+				C05866FF1CA9A10200D0E562 /* SettingsViewController.swift */,
+				C09607A21CB81F88004C2DD4 /* NavigationController.swift */,
+				C09607A61CB82183004C2DD4 /* BaseViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -383,15 +398,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05B205C1CBC1587008E81A7 /* CreateAccountViewController.swift in Sources */,
 				C011D1C31C9346A900FF43B4 /* MovieTableViewCell.swift in Sources */,
 				C05825F11C8F8AD900A10823 /* UserManager.swift in Sources */,
 				C05825ED1C8F8AC500A10823 /* MovieManager.swift in Sources */,
 				C05825BF1C8F884200A10823 /* ViewController.swift in Sources */,
 				C05825F31C8F8AEE00A10823 /* NetworkManager.swift in Sources */,
+				C09607A71CB82183004C2DD4 /* BaseViewController.swift in Sources */,
 				C05825FA1C8F8BA200A10823 /* LoginViewController.swift in Sources */,
 				C05825BD1C8F884200A10823 /* AppDelegate.swift in Sources */,
+				C05867001CA9A10200D0E562 /* SettingsViewController.swift in Sources */,
+				C09607A31CB81F88004C2DD4 /* NavigationController.swift in Sources */,
 				C05825EF1C8F8ACD00A10823 /* User.swift in Sources */,
 				C05825EB1C8F8AB800A10823 /* Movie.swift in Sources */,
+				C042D9D11C9731AC00384F32 /* MovieDetailViewController.swift in Sources */,
 				C01B54471C909E3400123B3D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

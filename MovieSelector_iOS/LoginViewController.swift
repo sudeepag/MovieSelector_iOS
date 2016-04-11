@@ -71,9 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 SwiftLoader.hide()
                 print(MovieManager.sharedManager.movieList)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainVC = storyboard.instantiateInitialViewController()
-                self.navigationController?.pushViewController(mainVC!, animated: true)
+                let homeVC = storyboard.instantiateViewControllerWithIdentifier("Home") as! ViewController
+                let navController = NavigationController(rootViewController: homeVC)
+                self.presentViewController(navController, animated:true, completion: nil)
             } else {
+                SwiftLoader.hide()
                 let alert = UIAlertView(title: "Error", message: "Unable to log in. Please ensure that your email and password are correct.", delegate: self, cancelButtonTitle: "Okay")
                 alert.show()
             }
@@ -83,14 +85,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -11,6 +11,8 @@ pod 'Firebase', '>= 2.5.0'
 pod 'Kingfisher', '~> 2.1'
 pod 'AlamofireImage', '~> 2.0'
 pod 'SwiftLoader'
+pod 'Cosmos', '~> 1.2'
+pod 'MediumMenu'
 end
 
 target 'MovieSelector_iOSTests' do
