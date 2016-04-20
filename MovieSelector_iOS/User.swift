@@ -8,8 +8,24 @@
 
 import Foundation
 
-class User {
+class User: NSObject {
     
+    var email: String!
+    var password: String!
+    var desc: String?
+    var major: String?
+    var uid: String?
     
+    init(email: String, password: String, desc: String, major: String, uid: String) {
+        self.email = email
+        self.password = password
+        self.desc = desc
+        self.major = major
+        self.uid = uid
+    }
+    
+    override var description: String {
+        return "User: \(uid), \(email), \(password), \(desc), \(major)"
+    }
     
 }

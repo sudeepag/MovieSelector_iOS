@@ -303,8 +303,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ikF-4c-Sld"/>
                                                 <exclude reference="WM2-40-Jvc"/>
+                                                <exclude reference="ikF-4c-Sld"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -356,8 +356,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Eox-t5-8J9"/>
                                                 <exclude reference="CSm-fu-A1C"/>
+                                                <exclude reference="Eox-t5-8J9"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -409,8 +409,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="iMQ-2z-umu"/>
                                                 <exclude reference="7a3-NQ-ueD"/>
+                                                <exclude reference="iMQ-2z-umu"/>
                                             </mask>
                                         </variation>
                                     </view>

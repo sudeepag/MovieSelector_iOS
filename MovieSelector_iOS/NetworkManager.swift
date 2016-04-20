@@ -27,11 +27,55 @@ class NetworkManager {
                 } else {
                     // We are now logged in
                     print("login successful")
+                    ref.childByAppendingPath("users").childByAppendingPath(authData.uid).observeEventType(.Value, withBlock: { (snapshot) in
+                        let data = snapshot.children.allObjects[0] as! FDataSnapshot
+                        let userDict = data.value
+                        let email = userDict["email"] as! String
+                        let password = userDict["password"] as! String
+                        let major = userDict["major"] as! String
+                        let uid = userDict["uid"] as! String
+                        let desc = userDict["description"] as! String
+                        UserManager.sharedManager.currentUser = User(email: email, password: password, desc: desc, major: major, uid: uid)
+                        ref.childByAppendingPath("users").childByAppendingPath(authData.uid).removeAllObservers()
+                    })
                     self.fetchMovies({ (success) -> Void in
                         completion(success: success)
                     })
                 }
         })
+    }
+    
+    func createUser(email: String, password: String, major: String, completion: (success: Bool) -> Void) {
+        let ref = Firebase(url: "https://muvee.firebaseio.com")
+        ref.createUser(email, password: password,
+                             withValueCompletionBlock: { error, result in
+                                if error != nil {
+                                    // There was an error creating the account
+                                    print(error)
+                                } else {
+                                    let uid = result["uid"] as? String
+                                    let user = User(email: email, password: password, desc: "", major: major, uid: uid!)
+                                    let path = ["data" : self.userDict(user)] as NSDictionary
+                                    ref.childByAppendingPath("users").childByAppendingPath(uid).setValue(path)
+                                    print("Successfully created user account with uid: \(uid)")
+                                    self.authUser(email, password: password, completion: { (success) in
+                                        completion(success: success)
+                                    })
+                                }
+        })
+    }
+    
+    func userDict(user: User) -> NSDictionary {
+        let dict = NSMutableDictionary()
+        dict.setObject(user.uid!, forKey: "uid")
+        dict.setObject(user.email, forKey: "email")
+        dict.setObject(user.password, forKey: "password")
+        dict.setObject(user.major!, forKey: "major")
+        dict.setObject(user.desc!, forKey: "description")
+        dict.setObject(false, forKey: "locked")
+        dict.setObject(false, forKey: "banned")
+        dict.setObject(false, forKey: "admin")
+        return dict
     }
     
     func fetchMovies(completion: (success: Bool) -> Void) {

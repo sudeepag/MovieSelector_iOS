@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLoader
 
 class CreateAccountViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
@@ -40,7 +41,14 @@ class CreateAccountViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
    
     @IBAction func signUpButtonSelected(sender: AnyObject) {
-        
+        SwiftLoader.show(animated: true)
+        NetworkManager.sharedManager.createUser(emailTextField.text!, password: passwordTextField.text!, major: majorTextField.text!) { (success) in
+            SwiftLoader.hide()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewControllerWithIdentifier("Home") as! ViewController
+            let navController = NavigationController(rootViewController: homeVC)
+            self.presentViewController(navController, animated:true, completion: nil)
+        }
     }
     
     func validateFields() {
@@ -53,7 +61,6 @@ class CreateAccountViewController: UIViewController, UIPickerViewDelegate, UIPic
             field = "password"
             alert.show()
         }
-        
         
     }
     

@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(UserManager.sharedManager.currentUser)
+        
         filteredMovies = [Movie]()
         
         tableView.dataSource = self
