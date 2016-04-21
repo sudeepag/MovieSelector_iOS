@@ -241,18 +241,39 @@
                                     <constraint firstItem="N9a-Yu-Wvo" firstAttribute="height" secondItem="3G0-ma-chu" secondAttribute="height" multiplier="0.4" id="zys-h7-7Ij"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdc-oC-3KK">
+                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a1X-nm-JMn">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a1X-nm-JMn" id="CgZ-jb-VlN">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.76862745098039209" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3G0-ma-chu" secondAttribute="trailing" id="1JD-hW-sj2"/>
                             <constraint firstItem="3G0-ma-chu" firstAttribute="leading" secondItem="xDi-v6-9vJ" secondAttribute="leading" id="8ie-C0-6A5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Sdc-oC-3KK" secondAttribute="bottom" id="JDy-qE-dOF"/>
                             <constraint firstAttribute="topMargin" secondItem="3G0-ma-chu" secondAttribute="top" id="MRA-ez-c4k"/>
+                            <constraint firstAttribute="trailing" secondItem="Sdc-oC-3KK" secondAttribute="trailing" id="Wk7-GW-t3e"/>
+                            <constraint firstItem="Sdc-oC-3KK" firstAttribute="leading" secondItem="xDi-v6-9vJ" secondAttribute="leading" id="eJO-yH-eKS"/>
+                            <constraint firstItem="Sdc-oC-3KK" firstAttribute="top" secondItem="3G0-ma-chu" secondAttribute="bottom" constant="-1" id="fE5-EH-YDR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Sdc-oC-3KK" id="Tm0-Rd-uNm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcF-cE-hgh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115" y="1087"/>
+            <point key="canvasLocation" x="138" y="1119"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="QVG-q2-fUf">
@@ -354,6 +375,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
                                                 <color key="value" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -410,6 +434,7 @@
                     <connections>
                         <outlet property="movieDescriptionLabel" destination="cjD-SP-4MV" id="5jX-jd-YfE"/>
                         <outlet property="posterImageView" destination="V0E-3c-lzo" id="Row-Xh-E0D"/>
+                        <outlet property="ratingView" destination="Zp2-O3-87g" id="C08-b6-Yp5"/>
                         <outlet property="titleLabel" destination="3dG-su-oQp" id="WTn-pH-JQp"/>
                     </connections>
                 </viewController>

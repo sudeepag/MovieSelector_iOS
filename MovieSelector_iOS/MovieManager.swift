@@ -15,12 +15,17 @@ class MovieManager {
     
     var movieList = [Movie]()
     
-    func addMovie(title: String, description: String, image: UIImage) {
+    func addMovie(title: String, description: String, image: UIImage, id: String) {
         let movie = Movie()
         movie.title = title
         movie.description = description
         movie.image = image
+        movie.id = id
         movieList.append(movie)
+    }
+    
+    func rateMovie(movie: Movie, withRating rating: Int) {
+        
     }
     
     

@@ -13,6 +13,7 @@ pod 'AlamofireImage', '~> 2.0'
 pod 'SwiftLoader'
 pod 'Cosmos', '~> 1.2'
 pod 'MediumMenu'
+pod 'Bohr'
 end
 
 target 'MovieSelector_iOSTests' do

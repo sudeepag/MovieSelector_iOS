@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.2.1)
   - AlamofireImage (2.3.1):
     - Alamofire (~> 3.2)
+  - Bohr (3.0.0)
   - Cosmos (1.2.2)
   - Firebase (2.5.1)
   - Kingfisher (2.1.0)
@@ -13,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - AlamofireImage (~> 2.0)
+  - Bohr
   - Cosmos (~> 1.2)
   - Firebase (>= 2.5.0)
   - Kingfisher (~> 2.1)
@@ -33,6 +35,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   AlamofireImage: e52336282757bbe1644f075d6cb85f19c891f939
+  Bohr: 17b150766e54e1fb8ff417d85b830c7caafa8b4a
   Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   Kingfisher: 3ac09acad75a25ab22f6d7cef3de10d61dd4792d

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Cosmos
 
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     
+    @IBOutlet var ratingView: CosmosView!
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var movieDescriptionLabel: UILabel!
     
@@ -30,9 +32,19 @@ class MovieDetailViewController: UIViewController {
         
         posterImageView.image = movie.image
         movieDescriptionLabel.text = movie.description
+        
+        ratingView.didFinishTouchingCosmos = didFinishTouchingCosmos
+        
+        NetworkManager.sharedManager.fetchMovieRating(movie) { (rating) in
+            self.ratingView.rating = Double(rating)
+        }
     }
 
     @IBAction func backButtonSelected(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    private func didFinishTouchingCosmos(rating: Double) {
+        NetworkManager.sharedManager.updateMovieRating(movie, rating: Int(rating))
     }
 }

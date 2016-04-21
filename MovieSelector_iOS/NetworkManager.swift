@@ -90,12 +90,13 @@ class NetworkManager {
                     let data = JSON(response.result.value!)
                     let movies = data["movies"].arrayValue
                     for movie in movies {
+                        let id = movie["id"].stringValue
                         let title = movie["title"].stringValue
                         let description = movie["synopsis"].stringValue
                         let posterArray = movie["posters"]
                         let imageURL = posterArray["original"].stringValue
                         self.fetchImageForURL(imageURL, completion: { (image) -> Void in
-                            MovieManager.sharedManager.addMovie(title, description: description, image: image)
+                            MovieManager.sharedManager.addMovie(title, description: description, image: image, id: id)
                             if (MovieManager.sharedManager.movieList.count == movies.count) {
                                 completion(success: true)
                             }
@@ -129,6 +130,75 @@ class NetworkManager {
         UIGraphicsEndImageContext()
         
         return scaledImage
+    }
+    
+    func fetchMovieRating(movie: Movie, completion: (rating: Int) -> Void) {
+        let ref = Firebase(url: "https://muvee.firebaseio.com")
+        ref.childByAppendingPath("movies").childByAppendingPath(movie.id).observeEventType(.Value, withBlock: { (snapshot) in
+            let list = snapshot.children.allObjects
+            if (!list.isEmpty) {
+                let data = snapshot.children.allObjects[0] as! FDataSnapshot
+                let ratingDict = data.value as! NSDictionary
+                let major = UserManager.sharedManager.currentUser.major!
+                ref.childByAppendingPath("movies").childByAppendingPath(movie.id).removeAllObservers()
+                completion(rating: ratingDict["average"]![major] as! Int)
+            }
+        })
+        
+    }
+    
+    func updateMovieRating(movie: Movie, rating: Int) {
+        print("called")
+        let ref = Firebase(url: "https://muvee.firebaseio.com")
+        ref.childByAppendingPath("movies").childByAppendingPath(movie.id).observeEventType(.Value, withBlock: { (snapshot) in
+            let list = snapshot.children.allObjects
+            if (list.isEmpty) {
+                let path = ["data" : self.newRatingDict(movie, rating: rating)] as NSDictionary
+                ref.childByAppendingPath("movies").childByAppendingPath(movie.id).setValue(path)
+                ref.childByAppendingPath("movies").childByAppendingPath(movie.id).removeAllObservers()
+            } else {
+                let data = snapshot.children.allObjects[0] as! FDataSnapshot
+                let ratingDict = data.value as! NSDictionary
+                print(ratingDict)
+                let path = ["data" : self.updatedRatingDict(ratingDict, movie: movie, rating: rating)] as NSDictionary
+                ref.childByAppendingPath("movies").childByAppendingPath(movie.id).setValue(path)
+                ref.childByAppendingPath("movies").childByAppendingPath(movie.id).removeAllObservers()
+            }
+            
+            
+        })
+    }
+    
+    func newRatingDict(movie: Movie, rating: Int) -> NSDictionary {
+        let dict = NSMutableDictionary()
+        let major = UserManager.sharedManager.currentUser.major!
+        let averageDict: [String:Int] = [major:rating]
+        dict.setObject(averageDict, forKey: "average")
+        let numRatingDict: [String:Int] = [major:1]
+        dict.setObject(numRatingDict, forKey: "numRating")
+        let sumDict: [String:Int] = [major:rating]
+        dict.setObject(sumDict, forKey: "sum")
+        dict.setObject(movie.title, forKey: "title")
+        dict.setObject(movie.id, forKey: "uid")
+        dict.setObject("", forKey: "review")
+        return dict
+    }
+    
+    func updatedRatingDict(dict: NSDictionary, movie: Movie, rating: Int) -> NSDictionary {
+        let updatedDict = NSMutableDictionary()
+        let major = UserManager.sharedManager.currentUser.major!
+        let currSum = dict["sum"]![major] as! Int
+        let currNum = dict["numRating"]![major] as! Int
+        let numRatingDict: [String:Int] = [major:(currNum + 1)]
+        updatedDict.setObject(numRatingDict, forKey: "numRating")
+        let sumDict: [String:Int] = [major:(currSum + rating)]
+        let averageDict: [String:Int] = [major:((currSum + rating) / (currNum + 1))]
+        updatedDict.setObject(averageDict, forKey: "average")
+        updatedDict.setObject(sumDict, forKey: "sum")
+        updatedDict.setObject(movie.title, forKey: "title")
+        updatedDict.setObject(movie.id, forKey: "uid")
+        updatedDict.setObject("", forKey: "review")
+        return updatedDict
     }
     
 }

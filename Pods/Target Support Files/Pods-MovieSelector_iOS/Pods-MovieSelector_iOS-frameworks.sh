@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MovieSelector_iOS/Alamofire.framework"
   install_framework "Pods-MovieSelector_iOS/AlamofireImage.framework"
+  install_framework "Pods-MovieSelector_iOS/Bohr.framework"
   install_framework "Pods-MovieSelector_iOS/Cosmos.framework"
   install_framework "Pods-MovieSelector_iOS/Firebase.framework"
   install_framework "Pods-MovieSelector_iOS/Kingfisher.framework"
@@ -97,6 +98,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MovieSelector_iOS/Alamofire.framework"
   install_framework "Pods-MovieSelector_iOS/AlamofireImage.framework"
+  install_framework "Pods-MovieSelector_iOS/Bohr.framework"
   install_framework "Pods-MovieSelector_iOS/Cosmos.framework"
   install_framework "Pods-MovieSelector_iOS/Firebase.framework"
   install_framework "Pods-MovieSelector_iOS/Kingfisher.framework"
