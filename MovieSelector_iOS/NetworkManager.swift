@@ -147,7 +147,7 @@ class NetworkManager {
         
     }
     
-    func updateMovieRating(movie: Movie, rating: Int) {
+    func updateMovieRating(movie: Movie, rating: Int, completion: (success: Bool) -> Void) {
         print("called")
         let ref = Firebase(url: "https://muvee.firebaseio.com")
         ref.childByAppendingPath("movies").childByAppendingPath(movie.id).observeEventType(.Value, withBlock: { (snapshot) in
@@ -156,6 +156,7 @@ class NetworkManager {
                 let path = ["data" : self.newRatingDict(movie, rating: rating)] as NSDictionary
                 ref.childByAppendingPath("movies").childByAppendingPath(movie.id).setValue(path)
                 ref.childByAppendingPath("movies").childByAppendingPath(movie.id).removeAllObservers()
+                completion(success: true)
             } else {
                 let data = snapshot.children.allObjects[0] as! FDataSnapshot
                 let ratingDict = data.value as! NSDictionary
@@ -163,9 +164,8 @@ class NetworkManager {
                 let path = ["data" : self.updatedRatingDict(ratingDict, movie: movie, rating: rating)] as NSDictionary
                 ref.childByAppendingPath("movies").childByAppendingPath(movie.id).setValue(path)
                 ref.childByAppendingPath("movies").childByAppendingPath(movie.id).removeAllObservers()
+                completion(success: true)
             }
-            
-            
         })
     }
     

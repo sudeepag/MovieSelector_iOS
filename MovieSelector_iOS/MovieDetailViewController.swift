@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import SAConfettiView
 
 class MovieDetailViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var movieDescriptionLabel: UILabel!
     
+    var confettiView: SAConfettiView!
     var movie: Movie!
     
     override func prefersStatusBarHidden() -> Bool {
@@ -38,6 +40,11 @@ class MovieDetailViewController: UIViewController {
         NetworkManager.sharedManager.fetchMovieRating(movie) { (rating) in
             self.ratingView.rating = Double(rating)
         }
+        
+        confettiView = SAConfettiView(frame: self.view.bounds)
+        confettiView.intensity = 0.75
+        confettiView.userInteractionEnabled = false
+        self.view.addSubview(confettiView)
     }
 
     @IBAction func backButtonSelected(sender: AnyObject) {
@@ -45,6 +52,11 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func didFinishTouchingCosmos(rating: Double) {
-        NetworkManager.sharedManager.updateMovieRating(movie, rating: Int(rating))
+        confettiView.startConfetti()
+        NetworkManager.sharedManager.updateMovieRating(movie, rating: Int(rating)) { (success) in
+            if (success) {
+                self.confettiView.stopConfetti()
+            }
+        }
     }
 }
